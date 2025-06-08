@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - GameShooter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f4f5f7; }
+    </style>
+</head>
+<body class="text-gray-800 font-sans">
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- Header -->
+        <header class="py-4 mb-8 border-b">
+             <div class="flex justify-between items-center">
+                <a href="index.html" class="text-3xl font-bold text-blue-600">GameShooter</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="games.html" class="text-gray-600 hover:text-blue-600">Games</a>
+                    <a href="developers.html" class="text-gray-600 hover:text-blue-600">Developers</a>
+                    <a href="forum.html" class="text-blue-600 font-semibold">Forum</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-4xl font-bold">Community Forum</h1>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
+                    New Post
+                </button>
+            </div>
+
+            <!-- Forum Posts Table -->
+            <div class="bg-white rounded-lg shadow-md">
+                <ul class="divide-y divide-gray-200">
+                    <!-- Post Item -->
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div>
+                            <a href="#" class="font-semibold text-lg hover:text-blue-600">Welcome and introductions</a>
+                            <p class="text-sm text-gray-500">by <span class="font-medium">Admin</span> - 3 days ago</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">15 Replies</p>
+                            <p class="text-sm text-gray-500">1.2k Views</p>
+                        </div>
+                    </li>
+                    <!-- Post Item -->
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div>
+                            <a href="#" class="font-semibold text-lg hover:text-blue-600">Request a new game!</a>
+                            <p class="text-sm text-gray-500">by <span class="font-medium">GameLover22</span> - 2 days ago</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">42 Replies</p>
+                            <p class="text-sm text-gray-500">5.8k Views</p>
+                        </div>
+                    </li>
+                    <!-- Post Item -->
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div>
+                            <a href="#" class="font-semibold text-lg hover:text-blue-600">Bug report for Moto Attack</a>
+                            <p class="text-sm text-gray-500">by <span class="font-medium">SpeedyRacer</span> - 1 day ago</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold">8 Replies</p>
+                            <p class="text-sm text-gray-500">450 Views</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html> 

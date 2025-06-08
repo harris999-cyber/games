@@ -1,119 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Play the thrilling Tank Force game online for free. Enjoy 2D tank shooting action right in your browser!" />
-    <link rel="canonical" href="https://www.monstersurvivors.com/tank-force" />
-    <title>Tank Force - Play Online Now | MonsterSurvivors.com</title>
+    <meta name="description" content="Play awesome browser games for free. Click a game below to play instantly!" />
+    <title>Game Center - With Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-white text-gray-800 font-sans">
-    <div class="max-w-4xl mx-auto px-4 py-8">
-      <!-- 页面主标题 -->
-      <h1 class="text-4xl font-bold text-blue-600 mb-4 text-center">
-        Online Games Collection
-      </h1>
+    <style>
+        body {
+            background-color: #f4f5f7; /* Light gray background */
+        }
+        #login-modal.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-gray-800 font-sans">
 
-      <!-- 页面总介绍 -->
-      <p class="text-lg text-center text-gray-600 mb-12">
-        Play awesome browser games for free. No downloads required!
-      </p>
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
 
-      <!-- Games Container -->
-      <div class="flex flex-col md:flex-row md:gap-12">
-        <!-- 第一个游戏: Tank Force -->
-        <section id="tank-force" class="mb-16 md:mb-0 md:w-1/2">
-          <!-- 游戏标题 -->
-          <h2 class="text-3xl font-semibold text-gray-800 mb-4">Tank Force</h2>
-          <!-- 游戏嵌入 -->
-          <div class="w-full aspect-video mb-8">
-            <iframe
-              src="https://html5.gamemonetize.co/o3d0s6ul608rk9dm4ius3tax6s2w5src/"
-              width="100%"
-              height="100%"
-              class="w-full h-full border rounded-xl shadow-lg"
-              frameborder="0"
-              scrolling="no"
-              allowfullscreen
-            ></iframe>
-          </div>
+        <!-- 1. Header with Login/Sign Up Buttons -->
+        <header class="py-4 mb-8 border-b">
+             <div class="flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold text-blue-600">GameShooter</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="games.html" class="text-gray-600 hover:text-blue-600">Games</a>
+                    <a href="developers.html" class="text-gray-600 hover:text-blue-600">Developers</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-blue-600">Forum</a>
+                </nav>
+                <!-- User Status Area -->
+                <div id="user-status">
+                    <!-- Logged-out state -->
+                    <div id="logged-out-view" class="flex items-center space-x-2">
+                        <button id="login-btn" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-5 py-2 rounded-lg border border-gray-300 transition">Login</button>
+                        <button id="signup-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-5 py-2 rounded-lg transition">Sign Up</button>
+                    </div>
+                    <!-- Logged-in state (hidden by default) -->
+                    <div id="logged-in-view" class="hidden items-center space-x-4">
+                        <span class="font-semibold text-gray-700">Welcome, User!</span>
+                        <button id="logout-btn" class="bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-lg transition">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-          <!-- 游戏详细信息 -->
-          <div class="space-y-6">
-            <h3 class="text-2xl font-semibold text-gray-800">🎮 About the Game</h3>
-            <p>
-              Tank Force is an action-packed 2D tank shooter where you must
-              outmaneuver enemies, dodge incoming shells, and aim with precision.
-              With simple controls and thrilling gameplay, it's perfect for quick
-              play sessions.
-            </p>
+        <!-- 2. Main Content Area -->
+        <main>
+            <!-- "Main Stage" - Game Iframe Area -->
+            <section id="featured-game" class="mb-10">
+                <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
+                    <iframe 
+                        id="game-iframe"
+                        src="https://html5.gamemonetize.co/3qo6bwp6aea8pj4ntuulxtyqsszn30ns/" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        allowfullscreen 
+                        allow="autoplay 'none'">
+                    </iframe>
+                </div>
+            </section>
+            
+            <!-- Game Selection Grid -->
+            <section id="game-catalog">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">Choose a Game to Play</h2>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-5 gap-y-8">
+                    
+                    <!-- Card 1: Moto Attack -->
+                    <div class="game-card group cursor-pointer" onclick="changeGame('https://html5.gamemonetize.co/3qo6bwp6aea8pj4ntuulxtyqsszn30ns/')">
+                        <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200">
+                            <img src="https://placehold.co/300x400/111827/FFFFFF/png?text=Moto+Attack" alt="Moto Attack" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="mt-3 text-sm font-semibold text-center text-gray-700 group-hover:text-blue-600 truncate">Moto Attack</h3>
+                    </div>
 
-            <h3 class="text-2xl font-semibold text-gray-800">
-              📱 Platform Compatibility
-            </h3>
-            <p>
-              This game works seamlessly on both desktop and mobile browsers. Just
-              tap or click to play – no app installation needed.
-            </p>
+                    <!-- Card 2: BrrBrr Patapim -->
+                    <div class="game-card group cursor-pointer" onclick="changeGame('https://html5.gamemonetize.co/1656arhg2u1z6evbbz5bcdqy39eyxk1d/')">
+                        <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200">
+                           <img src="https://placehold.co/300x400/1f2937/FFFFFF/png?text=BrrBrr+Patapim" alt="BrrBrr Patapim" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="mt-3 text-sm font-semibold text-center text-gray-700 group-hover:text-blue-600 truncate">BrrBrr Patapim</h3>
+                    </div>
 
-            <h3 class="text-2xl font-semibold text-gray-800">🕹️ How to Play</h3>
-            <ul class="list-disc list-inside">
-              <li>Use arrow keys or on-screen buttons to move</li>
-              <li>Fire shells to destroy enemy tanks</li>
-              <li>Survive as long as possible to score high</li>
-            </ul>
+                    <!-- Card 3: Tung Tung Sahur -->
+                    <div class="game-card group cursor-pointer" onclick="changeGame('https://html5.gamemonetize.co/vwbavd1dr61w3y7h0ha3f5hsphef00vu/')">
+                        <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200">
+                            <img src="https://placehold.co/300x400/374151/FFFFFF/png?text=Tung+Tung+Sahur" alt="Tung Tung Sahur" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="mt-3 text-sm font-semibold text-center text-gray-700 group-hover:text-blue-600 truncate">Tung Tung Sahur</h3>
+                    </div>
 
-            <h3 class="text-2xl font-semibold text-gray-800">🌟 Why You'll Love It</h3>
-            <p>
-              Whether you're a casual gamer or a tank fanatic, Tank Force brings
-              instant action, satisfying controls, and classic arcade fun.
-            </p>
-          </div>
-        </section>
+                    <!-- Card 4: Realistic Monster Truck -->
+                    <div class="game-card group cursor-pointer" onclick="changeGame('https://html5.gamemonetize.co/oyql8cwsas24prq2plynllt9trjs0tga/')">
+                        <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200">
+                            <img src="https://placehold.co/300x400/4b5563/FFFFFF/png?text=Monster+Truck" alt="Realistic Monster Truck" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="mt-3 text-sm font-semibold text-center text-gray-700 group-hover:text-blue-600 truncate">Monster Truck</h3>
+                    </div>
 
-        <!-- 第二个游戏: Brain Test IQ Challenge 2 -->
-        <section id="new-game" class="md:w-1/2">
-          <!-- 游戏标题 -->
-          <h2 class="text-3xl font-semibold text-gray-800 mb-4">
-            Brain Test IQ Challenge 2
-          </h2>
-          <!-- 游戏嵌入 (竖屏样式) -->
-          <div class="max-w-sm mx-auto aspect-[750/1334] mb-8">
-            <iframe
-              src="https://html5.gamemonetize.co/vyh3jfuu64ey5cdaxskfsoc5a28z6yc0/"
-              width="100%"
-              height="100%"
-              class="w-full h-full border rounded-xl shadow-lg"
-              frameborder="0"
-              scrolling="no"
-              allowfullscreen
-            ></iframe>
-          </div>
+                    <!-- Card 5: Stunt Sprint -->
+                    <div class="game-card group cursor-pointer" onclick="changeGame('https://html5.gamemonetize.co/6wehfwvhqz38sko3kanj7a5btwrrtk6n/')">
+                        <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200">
+                            <img src="https://placehold.co/300x400/6b7280/FFFFFF/png?text=Stunt+Sprint" alt="Stunt Sprint" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="mt-3 text-sm font-semibold text-center text-gray-700 group-hover:text-blue-600 truncate">Stunt Sprint</h3>
+                    </div>
 
-          <!-- 游戏详细信息 -->
-          <div class="space-y-6">
-            <h3 class="text-2xl font-semibold text-gray-800">🎮 About the Game</h3>
-            <p>准备好迎接绝妙的脑力挑战了吗？《Brain Test IQ Challenge 2》是一款集合了绘画、跳跃、多人对战、迷宫逃脱等多种玩法的益智解谜游戏，瞬间激活你的大脑！</p>
+                    <!-- Card 6: Sort New Year! -->
+                    <div class="game-card group cursor-pointer" onclick="changeGame('https://html5.gamemonetize.co/7159t7yly2mi03sz0gfm1cujzf9k05u0/')">
+                        <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300 ring-1 ring-gray-200">
+                            <img src="https://placehold.co/300x400/9ca3af/FFFFFF/png?text=Sort+New+Year" alt="Sort New Year!" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="mt-3 text-sm font-semibold text-center text-gray-700 group-hover:text-blue-600 truncate">Sort New Year!</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-            <h3 class="text-2xl font-semibold text-gray-800">
-              📱 Platform Compatibility
-            </h3>
-            <p>
-              This game works seamlessly on both desktop and mobile browsers. Just
-              tap or click to play – no app installation needed.
-            </p>
+        <!-- 3. Footer -->
+        <footer class="mt-16 py-8 border-t text-center text-gray-500">
+            <p>&copy; 2024 GameShooter. All Rights Reserved.</p>
+        </footer>
 
-            <h3 class="text-2xl font-semibold text-gray-800">🕹️ How to Play</h3>
-            <ul class="list-disc list-inside">
-              <li>鼠标点击或屏幕点触即可开始游戏。</li>
-            </ul>
-
-            <h3 class="text-2xl font-semibold text-gray-800">🌟 Why You'll Love It</h3>
-            <p>这款游戏不仅仅是单一的解谜，它融合了多种游戏模式，让你在享受乐趣的同时，不断挑战自己的思维极限。每一关都带来新的惊喜！</p>
-          </div>
-        </section>
-      </div>
     </div>
-  </body>
+
+    <!-- Login/Sign Up Modal (hidden by default) -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md m-4">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-900">Login to Your Account</h2>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-800 text-3xl">&times;</button>
+            </div>
+            <!-- Modal Form -->
+            <form id="login-form">
+                <div class="space-y-4">
+                    <input type="email" placeholder="Email Address" class="w-full bg-gray-100 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="password" placeholder="Password" class="w-full bg-gray-100 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 mt-6 rounded-lg transition">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Game switching function
+        function changeGame(gameSrc) {
+            const iframe = document.getElementById('game-iframe');
+            if (iframe.src !== gameSrc) {
+                iframe.src = gameSrc;
+            }
+        }
+
+        // Login system simulation
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('login-modal');
+            const loginBtn = document.getElementById('login-btn');
+            const signupBtn = document.getElementById('signup-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const loginForm = document.getElementById('login-form');
+            const modalTitle = document.getElementById('modal-title');
+            
+            const loggedOutView = document.getElementById('logged-out-view');
+            const loggedInView = document.getElementById('logged-in-view');
+            const logoutBtn = document.getElementById('logout-btn');
+
+            const openModal = (isLogin) => {
+                modalTitle.textContent = isLogin ? 'Login to Your Account' : 'Create a New Account';
+                modal.classList.remove('hidden');
+            };
+
+            const closeModal = () => {
+                modal.classList.add('hidden');
+            };
+
+            loginBtn.addEventListener('click', () => openModal(true));
+            signupBtn.addEventListener('click', () => openModal(false));
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            loginForm.addEventListener('submit', (event) => {
+                event.preventDefault(); 
+                closeModal();
+                loggedOutView.classList.add('hidden');
+                loggedInView.classList.remove('hidden');
+                loggedInView.classList.add('flex');
+            });
+
+            logoutBtn.addEventListener('click', () => {
+                loggedInView.classList.add('hidden');
+                loggedInView.classList.remove('flex');
+                loggedOutView.classList.remove('hidden');
+            });
+        });
+    </script>
+
+</body>
 </html>

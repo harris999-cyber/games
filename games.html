@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Games - GameShooter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f4f5f7; }
+    </style>
+</head>
+<body class="text-gray-800 font-sans">
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- Header -->
+        <header class="py-4 mb-8 border-b">
+             <div class="flex justify-between items-center">
+                <a href="index.html" class="text-3xl font-bold text-blue-600">GameShooter</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="games.html" class="text-blue-600 font-semibold">Games</a>
+                    <a href="developers.html" class="text-gray-600 hover:text-blue-600">Developers</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-blue-600">Forum</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h1 class="text-4xl font-bold mb-8">Game Library</h1>
+
+            <!-- Search and Filter Bar -->
+            <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm mb-8">
+                <input type="search" placeholder="Search for a game..." class="w-full md:w-1/2 p-2 border rounded-md">
+                <div class="hidden md:flex items-center space-x-4">
+                    <label for="category-select" class="font-semibold">Category:</label>
+                    <select id="category-select" class="p-2 border rounded-md">
+                        <option>All</option>
+                        <option>Action</option>
+                        <option>Puzzle</option>
+                        <option>Strategy</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Game Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <!-- Placeholder for many game cards -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-gray-300 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500">Game 1</span>
+                    </div>
+                    <h3 class="mt-2 font-semibold text-center text-gray-700">Action Hero</h3>
+                </div>
+                <div class="group">
+                    <div class="aspect-[3/4] bg-gray-300 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500">Game 2</span>
+                    </div>
+                    <h3 class="mt-2 font-semibold text-center text-gray-700">Puzzle Quest</h3>
+                </div>
+                <!-- ... Repeat for more games ... -->
+                 <div class="group">
+                    <div class="aspect-[3/4] bg-gray-300 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500">Game 3</span>
+                    </div>
+                    <h3 class="mt-2 font-semibold text-center text-gray-700">Space Shooter</h3>
+                </div>
+                 <div class="group">
+                    <div class="aspect-[3/4] bg-gray-300 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500">Game 4</span>
+                    </div>
+                    <h3 class="mt-2 font-semibold text-center text-gray-700">City Builder</h3>
+                </div>
+                 <div class="group">
+                    <div class="aspect-[3/4] bg-gray-300 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500">Game 5</span>
+                    </div>
+                    <h3 class="mt-2 font-semibold text-center text-gray-700">Card Battle</h3>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html> 
